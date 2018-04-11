@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather Forecast API</title>
+	<link href="https://fonts.googleapis.com/css?family=Hind|Quicksand|Shadows+Into+Light" rel="stylesheet">  
+	<link rel="stylesheet" href="css/main.css">
+  	<link rel="stylesheet" href="css/normalize.css">
+	<script type="text/javascript" src="js/date.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+	<div class="loader-container none">
+		<img class="sunshine" src="" alt="">
+	</div>
+	<div class="weather-container">
+		<div class="first-day">
+			<h6></h6>
+			<div class="search-container">
+				<input name="address" placeholder="Zip, City, State or Country" id="address"  type="text">
+				<div onclick="getWeatherData();open_modal();" id="btn">
+					<img  src="svgs/icon-search.svg" alt="search icon">
+				</div>
+			</div>
+			<div class="day1"> 
+				<div class="day1temp">
+					<div class="temp">
+						<span></span>
+						<img id="degree" src="" alt="">
+						<img id="forecast-icon img" src="" alt="">
+					</div>
+				</div>
+				<h4></h4>
+				<div class="day1summary">
+					<p>
+						<span id="summary1"></span> 
+						<span id="day1"></span>
+					</p>
+					<ul>
+						<li class="humidity1"></li>
+						<li class="precip1"></li>
+					</ul>
+					<ul>
+						<li class="windSpeed1"></li>
+						<li class="visibility1"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="day2 col">
+				<h5 id="day2" class=""></h5>
+				<div class="weather2_icon default-icon">
+					<img src="" alt="" id="img">
+				</div>
+				<div class="day2summary"><span></span></div>
+				<div class="day2precip"><span></span></div>
+				<div class="day2tempLow"><span></span></div>
+				<div class="day2tempHigh"><span></span></div>
+			</div>
+			<div class="day3 col" >
+				<h5 id="day3" class=""></h5>
+				<div class="weather3_icon default-icon">
+					<img src="" alt="" id="img">
+				</div>
+				<div class="day3summary"><span></span></div>
+				<div class="day3precip"><span></span></div>
+				<div class="day3tempLow"><span></span></div>
+				<div class="day3tempHigh"><span></span></div>
+			</div>
+			<div class="day4 col">
+				<h5 id="day4" class=""></h5>
+				<div class="weather4_icon default-icon">
+					<img src="" alt="" id="img">
+				</div>
+				<div class="day4summary"> <span></span></div>
+				<div class="day4precip"><span></span></div>
+				<div class="day4tempLow"> <span></span></div>
+				<div class="day4tempHigh"> <span></span></div>
+			</div>
+			<div class="day5 col">
+				 <h5 id="day5" class=""></h5>
+				<div class="weather5_icon default-icon">
+					<img src="" alt="" id="img">
+				</div>
+				<div class="day5summary"> <span></span></div>
+				<div class="day5precip"><span></span></div>
+				<div class="day5tempLow"> <span></span></div>
+				<div class="day5tempHigh"> <span></span></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
