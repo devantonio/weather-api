@@ -98,7 +98,7 @@ var day_8 = weekday[Date.today().add(7).days().getDay()];
 function open_modal(){
 	if ($("input").val() != "") {
 		$(".loader-container").removeClass("none");
-
+		$(".landing-msg").css("display", "none");
 		function getRandomInt(max) {
   			return Math.floor(Math.random() * Math.floor(max));
 		}
@@ -186,8 +186,8 @@ function getWeatherData(e){
 					$(".day1temp span").text(current_temp);
 					$(".day1icon span").text(icon);
 					$("#summary1").text(summary + " " +"on" + " ");
-					 $(".visibility1").html("<img src='svgs/eye.svg'><span>"+"Visibility: "+visibility +"</span>");
-					$(".windSpeed1").html("<img src='svgs/wind.svg'><span>"+"wind: "+windSpeed + "mph"+"</span>");
+					$(".visibility1").html("<img src='svgs/eye.svg'><span>"+"Visibility: "+visibility +"</span>");
+					$(".windSpeed1").html("<img src='svgs/wind.svg'><span>"+"Wind: "+windSpeed + "mph"+"</span>");
 					$(".precip1").html("<img src='svgs/rain.svg'><span>"+"Precipitation: "+precip+"%"+"</span>");
 					$(".humidity1").html("<img src='svgs/rain-drops.svg'><span>"+"Humidity: "+humidity+"</span>");
 
