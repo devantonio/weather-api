@@ -1,48 +1,47 @@
-	*{
+*{
+	font-family: 'Quicksand', sans-serif;
+	color: #474747;
+}
 
-    
-    font-family: 'Quicksand', sans-serif;
-color: #474747;
+ul{
+	width: 100%;
+	padding-left: 0;
+}
 
-	}
+.precip1,.humidity1,.visibility1,.windSpeed1{
+	width: 50%;
+	float: left;
+	font-size: 14px;
+}
 
-	ul{
-		width: 100%;
-padding-left: 0;
-	}
-
-	.precip1,.humidity1,.visibility1,.windSpeed1{
-		width: 50%;
-float: left;
-font-size: 14px;
-	}
 .windSpeed1 img, .visibility1 img{
 	position: relative;
-top: 5px;
-right: 5px;
+	top: 5px;
+	right: 5px;
 }
 
 .precip1 img{
 	position: relative;
-right: 5px;
-top: 3px;
+	right: 5px;
+	top: 3px;
 }
-	li{
-		list-style: none;
-	}
-	p{
-		margin:0;
-	}
+
+li{
+	list-style: none;
+}
+p{
+	margin:0;
+}
 
 .first-day{
 	background-color: white;
-height: 600px;
-width: 300px;
-margin: 20px auto;
--webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
--moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
-border: 1px solid #e3e3e3;
+	height: 600px;
+	width: 300px;
+	margin: 20px auto;
+	-webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
+	border: 1px solid #e3e3e3;
 }
 
 
@@ -62,7 +61,7 @@ border: 1px solid #e3e3e3;
 .first-day h4, h6{
 	text-align: center !important;
 	margin: 0 auto !important;
-width: 100%;
+	width: 100%;
 }
 
 h4{
@@ -79,9 +78,9 @@ h5, h4, h6{
 
 .col{
 	width: calc(99%/4);
-font-size: 12px;
-text-align: center;
-margin-top: 20px;
+	font-size: 12px;
+	text-align: center;
+	margin-top: 20px;
 }
 
 .col img{
@@ -101,37 +100,21 @@ margin-top: 20px;
 }
 
 #forecast-icon{
-position: relative;
-left: 10px;
-bottom: 10px;
-width: 40px !important;
+	position: relative;
+	left: 10px;
+	bottom: 10px;
+	width: 40px !important;
 }
 
 
-
-
-/*
-.day4, .day2, .day3{
-	border: 1px solid white;
-	border-left: 0;
-	border-top: 0;
-	border-bottom: 0;
-}*/
 #day2,#day3,#day4,#day5{
 	margin-bottom: 10px;
 }
 
-/*.day2summary,.day3summary,.day4summary,.day5summary{
-	margin: 5px;
-}
 
-.day2precip,.day3precip,.day4precip,.day5precip{
-	margin: 10px;
-}
-*/
 .day1summary{
 	text-align: center;
-margin-top: 5px;
+    margin-top: 5px;
 }
 .day1summary span, h4{
 	font-size: 13px;
@@ -169,10 +152,10 @@ margin-top: 5px;
 
 #btn{
 	width: 25px;
-cursor: pointer;
-height: 25px;
-padding-top: 10px;
-float: right;
+	cursor: pointer;
+	height: 25px;
+	padding-top: 10px;
+	float: right;
 }
 
 #btn img{
@@ -191,24 +174,23 @@ float: right;
 
 .search-container{
 	width: 210px;
-margin: 0 auto;
-font-size: 14px;
+	margin: 0 auto;
+	font-size: 14px;
 }
 
 #address{
-	/*border-radius: 180px;*/
-border: 1px solid #B7B7B7;
-padding-left: 10px;
-margin-top: 10px;
-width: 170px;
-border-left: 0;
-border-top: 0;
-border-right: 0;
-text-align: center;
-outline: none;
+	border: 1px solid #B7B7B7;
+	padding-left: 10px;
+	margin-top: 10px;
+	width: 170px;
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	text-align: center;
+	outline: none;
 }
 
 #degree{
 	position: relative;
-bottom: 30px;
+	bottom: 30px;
 }
