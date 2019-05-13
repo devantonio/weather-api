@@ -117,9 +117,8 @@ function getWeatherData(e){
 	var address = $("#address").val();
 	var encodedAddress = encodeURIComponent(address);
 	var xhttp = new XMLHttpRequest();
-	var key = "AIzaSyAt_MHM8CMn0nVPu_Y-qcc0zI82_gyDlEw";
 
-  	xhttp.open("GET",`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`, true);
+  	xhttp.open("GET",`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${geocodeAPIKey}`, true);
   	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
 			var data = JSON.parse(xhttp.responseText);
