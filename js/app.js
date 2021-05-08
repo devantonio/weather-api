@@ -133,54 +133,57 @@ function getWeatherData(e){
 			var city_state = data.results[0].formatted_address;
 
 			var xhttp1 = new XMLHttpRequest();
-	  		xhttp1.open("GET",`https://api.darksky.net/forecast/b97611e86cb50ebfc99eae6b7c06d572/${lat},${lng}`, true);
+	  		xhttp1.open("GET",`http://api.weatherapi.com/v1/current.json?key=3725e6de0c764ed3be330628210805&q=${address}&aqi=no`, true);
 			
     
    
 		  	xhttp1.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 200) {
+
+
 			 		var data = JSON.parse(xhttp1.responseText);
-					var current_temp = Math.floor(data.currently.temperature)
-					var icon = data.currently.icon;
-					var summary = data.currently.summary;
-					var precip = data.currently.precipProbability;
-					var windSpeed = data.currently.windSpeed;
-					var visibility = data.currently.visibility;
-					var humidity = data.currently.humidity;
-					var timezone = data.timezone;
-					 
+					 console.log(data.current.condition.icon);
+					var current_temp = data.current.temp_f;
+					var icon = data.current.condition.icon;
+					var summary = data.current.condition.text;
+					var precip = data.current.precip_in;
+					var windSpeed = data.current.gust_mph;
+					var visibility = data.current.vis_miles;
+					var humidity = data.current.humidity;
 
-					 
-					var day2tempLow = Math.floor(data.daily.data[0].temperatureLow); 
-					var day2tempHigh = Math.floor(data.daily.data[0].temperatureHigh);
-					var day2icon = data.daily.data[0].icon;
-					var day2summary = data.daily.data[0].summary;
-					var day2precip = data.daily.data[0].precipProbability;
+					forecast = document.getElementById('forecast-icon');
+					forecast.setAttribute('src', icon);
 
-					var day3tempLow = Math.floor(data.daily.data[1].temperatureLow); 
-					var day3tempHigh = Math.floor(data.daily.data[1].temperatureHigh);
-					var day3icon = data.daily.data[1].icon;
-					var day3summary = data.daily.data[1].summary;
-					var day3precip = data.daily.data[1].precipProbability;
+					// var day2tempLow = Math.floor(data.daily.data[0].temperatureLow); 
+					// var day2tempHigh = Math.floor(data.daily.data[0].temperatureHigh);
+					// var day2icon = data.daily.data[0].icon;
+					// var day2summary = data.daily.data[0].summary;
+					// var day2precip = data.daily.data[0].precipProbability;
+
+					// var day3tempLow = Math.floor(data.daily.data[1].temperatureLow); 
+					// var day3tempHigh = Math.floor(data.daily.data[1].temperatureHigh);
+					// var day3icon = data.daily.data[1].icon;
+					// var day3summary = data.daily.data[1].summary;
+					// var day3precip = data.daily.data[1].precipProbability;
 
 
-					var day4tempLow = Math.floor(data.daily.data[2].temperatureLow); 
-					var day4tempHigh = Math.floor(data.daily.data[2].temperatureHigh);
-					var day4icon = data.daily.data[2].icon;
-					var day4summary = data.daily.data[2].summary;
-					var day4precip = data.daily.data[2].precipProbability;
+					// var day4tempLow = Math.floor(data.daily.data[2].temperatureLow); 
+					// var day4tempHigh = Math.floor(data.daily.data[2].temperatureHigh);
+					// var day4icon = data.daily.data[2].icon;
+					// var day4summary = data.daily.data[2].summary;
+					// var day4precip = data.daily.data[2].precipProbability;
 
-					var day5tempLow = Math.floor(data.daily.data[3].temperatureLow); 
-					var day5tempHigh = Math.floor(data.daily.data[3].temperatureHigh);
-					var day5icon = data.daily.data[3].icon;
-					var day5summary = data.daily.data[3].summary;
-					var day5precip = data.daily.data[3].precipProbability;
+					// var day5tempLow = Math.floor(data.daily.data[3].temperatureLow); 
+					// var day5tempHigh = Math.floor(data.daily.data[3].temperatureHigh);
+					// var day5icon = data.daily.data[3].icon;
+					// var day5summary = data.daily.data[3].summary;
+					// var day5precip = data.daily.data[3].precipProbability;
 
-					var day6tempLow = Math.floor(data.daily.data[4].temperatureLow); 
-					var day6tempHigh = Math.floor(data.daily.data[4].temperatureHigh);
-					var day6icon = data.daily.data[4].icon;
-					var day6summary = data.daily.data[4].summary;
-					var day6precip = data.daily.data[4].precipProbability;
+					// var day6tempLow = Math.floor(data.daily.data[4].temperatureLow); 
+					// var day6tempHigh = Math.floor(data.daily.data[4].temperatureHigh);
+					// var day6icon = data.daily.data[4].icon;
+					// var day6summary = data.daily.data[4].summary;
+					// var day6precip = data.daily.data[4].precipProbability;
 
 					$(".day1temp span").text(current_temp);
 					$(".day1icon span").text(icon);
@@ -190,54 +193,54 @@ function getWeatherData(e){
 					$(".precip1").html("<img src='svgs/rain.svg'><span>"+"Precipitation: "+precip+"%"+"</span>");
 					$(".humidity1").html("<img src='svgs/rain-drops.svg'><span>"+"Humidity: "+humidity+"</span>");
 
-					var icon_index2 = forecast_icon.indexOf(day2icon);
-					var icon_index3 = forecast_icon.indexOf(day3icon);
-					var icon_index4 = forecast_icon.indexOf(day4icon);
-					var icon_index5 = forecast_icon.indexOf(day5icon);
-					var icon_index6 = forecast_icon.indexOf(day6icon);
+					// var icon_index2 = forecast_icon.indexOf(day2icon);
+					// var icon_index3 = forecast_icon.indexOf(day3icon);
+					// var icon_index4 = forecast_icon.indexOf(day4icon);
+					// var icon_index5 = forecast_icon.indexOf(day5icon);
+					// var icon_index6 = forecast_icon.indexOf(day6icon);
 			
 
-					if(a  == -1 || icon_index2 == -1 || icon_index3 == -1 || icon_index4 == -1 || icon_index5 == -1 || icon_index6 == -1){
-						$("#forecast-icon").attr("src", weatherIcon[0]);
-						$("#default-icon").attr("src", "svgs/static/day.svg");
-					}
+					// if(a  == -1 || icon_index2 == -1 || icon_index3 == -1 || icon_index4 == -1 || icon_index5 == -1 || icon_index6 == -1){
+					// 	$("#forecast-icon").attr("src", weatherIcon[0]);
+					// 	$("#default-icon").attr("src", "svgs/static/day.svg");
+					// }
 
 
-					$(".weather2_icon img").attr("src", weatherIcon[icon_index2]);
-					$(".day2icon span").text(day2icon);
-					$(".day2summary span").text(day2summary);
-					$(".day2tempHigh span").text("Hi: "+day2tempHigh);
-					$(".day2tempLow span").text("Low: "+day2tempLow);
-					$(".day2precip span").text(day2precip+"%"+" chance of rain");
+					// $(".weather2_icon img").attr("src", weatherIcon[icon_index2]);
+					// $(".day2icon span").text(day2icon);
+					// $(".day2summary span").text(day2summary);
+					// $(".day2tempHigh span").text("Hi: "+day2tempHigh);
+					// $(".day2tempLow span").text("Low: "+day2tempLow);
+					// $(".day2precip span").text(day2precip+"%"+" chance of rain");
 
-					$(".weather3_icon img").attr("src", weatherIcon[icon_index3]);
-					$(".day3icon span").text(day3icon);
-					$(".day3summary span").text(day3summary);
-					$(".day3tempHigh span").text("Hi: "+day3tempHigh);
-					$(".day3tempLow span").text("Low: "+day3tempLow);
-					$(".day3precip span").text(day3precip+"%"+" chance of rain");
+					// $(".weather3_icon img").attr("src", weatherIcon[icon_index3]);
+					// $(".day3icon span").text(day3icon);
+					// $(".day3summary span").text(day3summary);
+					// $(".day3tempHigh span").text("Hi: "+day3tempHigh);
+					// $(".day3tempLow span").text("Low: "+day3tempLow);
+					// $(".day3precip span").text(day3precip+"%"+" chance of rain");
 
 
-					$(".weather4_icon img").attr("src", weatherIcon[icon_index4]);
-					$(".day4icon span").text(day4icon);
-					$(".day4summary span").text(day4summary);
-					$(".day4tempHigh span").text("Hi: "+day4tempHigh);
-					$(".day4tempLow span").text("Low: "+day4tempLow);
-					$(".day4precip span").text(day4precip+"%"+" chance of rain");
+					// $(".weather4_icon img").attr("src", weatherIcon[icon_index4]);
+					// $(".day4icon span").text(day4icon);
+					// $(".day4summary span").text(day4summary);
+					// $(".day4tempHigh span").text("Hi: "+day4tempHigh);
+					// $(".day4tempLow span").text("Low: "+day4tempLow);
+					// $(".day4precip span").text(day4precip+"%"+" chance of rain");
 
-					$(".weather5_icon img").attr("src", weatherIcon[icon_index5]);
-					$(".day5icon span").text(day5icon);
-					$(".day5summary span").text(day5summary);
-					$(".day5tempHigh span").text("Hi: "+day5tempHigh);
-					$(".day5tempLow span").text("Low: "+day5tempLow);
-					$(".day5precip span").text(day5precip+"%"+" chance of rain");
+					// $(".weather5_icon img").attr("src", weatherIcon[icon_index5]);
+					// $(".day5icon span").text(day5icon);
+					// $(".day5summary span").text(day5summary);
+					// $(".day5tempHigh span").text("Hi: "+day5tempHigh);
+					// $(".day5tempLow span").text("Low: "+day5tempLow);
+					// $(".day5precip span").text(day5precip+"%"+" chance of rain");
 
-					$(".weather6_icon img").attr("src", weatherIcon[icon_index6]);
-					$(".day6icon span").text(day6icon);
-					$(".day6summary span").text(day6summary);
-					$(".day6tempHigh span").text("Hi: "+day6tempHigh);
-					$(".day6tempLow span").text("Low: "+day6tempLow);
-					$(".day6precip span").text(day6precip+"%"+" chance of rain");
+					// $(".weather6_icon img").attr("src", weatherIcon[icon_index6]);
+					// $(".day6icon span").text(day6icon);
+					// $(".day6summary span").text(day6summary);
+					// $(".day6tempHigh span").text("Hi: "+day6tempHigh);
+					// $(".day6tempLow span").text("Low: "+day6tempLow);
+					// $(".day6precip span").text(day6precip+"%"+" chance of rain");
 
 					$("h4").text(city_state);
 
@@ -247,12 +250,12 @@ function getWeatherData(e){
 					$("#degree").attr("src", "svgs/degree1.svg");
 					$("input").val("");
 
-					var a = forecast_icon.indexOf(icon);
-					$("#forecast-icon").attr("src", weatherIcon[a]);
+					// var a = forecast_icon.indexOf(icon);
+					// $("#forecast-icon").attr("src", weatherIcon[a]);
 
-					if(a == -1){
-						$("#forecast-icon").attr("src", weatherIcon[0]);
-					}
+					// if(a == -1){
+					// 	$("#forecast-icon").attr("src", weatherIcon[0]);
+					// }
 
 					$("#day1").text(day_1);
 					$("#day2").text(day_2);
@@ -267,3 +270,4 @@ function getWeatherData(e){
 	}
 	  xhttp.send();
 }
+
