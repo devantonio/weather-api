@@ -133,7 +133,7 @@ function getWeatherData(e){
 			var city_state = data.results[0].formatted_address;
 
 			var xhttp1 = new XMLHttpRequest();
-	  		xhttp1.open("GET",`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/b97611e86cb50ebfc99eae6b7c06d572/${lat},${lng}`, true);
+	  		xhttp1.open("GET",`https://api.darksky.net/forecast/b97611e86cb50ebfc99eae6b7c06d572/${lat},${lng}`, true);
 			
     
    
