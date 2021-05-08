@@ -120,7 +120,7 @@ function getWeatherData(e){
 
 
 			var xhttp1 = new XMLHttpRequest();
-	  		xhttp1.open("GET",`http://api.weatherapi.com/v1/current.json?key=3725e6de0c764ed3be330628210805&q=${address}&aqi=no`, true);
+	  		xhttp1.open("GET",`https://api.weatherapi.com/v1/current.json?key=3725e6de0c764ed3be330628210805&q=${address}&aqi=no`, true);
 			
     
    
