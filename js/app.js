@@ -115,22 +115,9 @@ $(document).ready(function(){ $("h6").text(time_date);});
 
 function getWeatherData(e){
 	var address = $("#address").val();
-	var encodedAddress = encodeURIComponent(address);
-	var xhttp = new XMLHttpRequest();
-
-  	xhttp.open("GET",`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${geocodeAPIKey}`, true);
-  	xhttp.onreadystatechange = function() {
-    	if (this.readyState == 4 && this.status == 200) {
-			var data = JSON.parse(xhttp.responseText);
-			if(data.results[0] === undefined){
-				$(".loader-container").addClass("none");
-				$(".day1").html("<h1>No results</h1>");
-			}
 
 
-			var lat = data.results[0].geometry.location.lat;
-			var lng = data.results[0].geometry.location.lng;
-			var city_state = data.results[0].formatted_address;
+
 
 			var xhttp1 = new XMLHttpRequest();
 	  		xhttp1.open("GET",`http://api.weatherapi.com/v1/current.json?key=3725e6de0c764ed3be330628210805&q=${address}&aqi=no`, true);
@@ -139,10 +126,11 @@ function getWeatherData(e){
    
 		  	xhttp1.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 200) {
+var data = JSON.parse(xhttp1.responseText);
+					var city_state = data.location.name;
 
-
-			 		var data = JSON.parse(xhttp1.responseText);
-					 console.log(data.current.condition.icon);
+			 		
+					// console.log(data.current.condition.icon);
 					var current_temp = data.current.temp_f;
 					var icon = data.current.condition.icon;
 					var summary = data.current.condition.text;
@@ -264,10 +252,9 @@ function getWeatherData(e){
 					$("#day5").text(day_5);
 
 	    		}
-	  		}
-	  		xhttp1.send();
-		}
-	}
-	  xhttp.send();
+	  		
+		};
+		xhttp1.send();
+	
 }
 
